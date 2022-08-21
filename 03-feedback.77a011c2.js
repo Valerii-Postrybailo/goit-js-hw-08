@@ -1,2 +1,0 @@
-const e=document.querySelector("input");console.log(e);const t=document.querySelector("textarea");console.log(t),e.addEventListener("input",(e=>{console.log(e.currentTarget.value);const t=JSON.stringify(e.currentTarget.value);console.log(t)})),t.addEventListener("input",(e=>{console.log(e.currentTarget.value);const t=JSON.stringify(e.currentTarget.value);console.log(t)}));
-//# sourceMappingURL=03-feedback.77a011c2.js.map
