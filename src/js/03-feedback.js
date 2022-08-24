@@ -18,6 +18,14 @@ form.addEventListener('input', throttle(validateForm, 500));
 function validateForm(event){
   const { name, value } = event.target;
   dataBase[name] = value;
+  console.log(dataBase[name])
+
+  let alreadyInStorage = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+  if (alreadyInStorage) {
+    alreadyInStorage = JSON.parse(alreadyInStorage)
+  }
+  
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataBase));
 }
 
@@ -34,8 +42,9 @@ function submitForm (event){
 getDataBase();
 
 function getDataBase(){
-const getData = localStorage.getItem(LOCAL_STORAGE_KEY);
-const parsedData = JSON.parse(getData);
+  const getData = localStorage.getItem(LOCAL_STORAGE_KEY);
+  const parsedData = JSON.parse(getData);
+  
 if (parsedData) {
   userEmail.value = parsedData.email;
   userMessage.value = parsedData.message;
